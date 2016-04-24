@@ -78,8 +78,8 @@ def load_map(mapFilename):
 class Path(object):
     def __init__(self,start):
         self.nodes = [start]
-        self.outdoorDistance = 0
-        self.totalDistance = 0
+        self.outdoorDistance = 0.0
+        self.totalDistance = 0.0
 
     def getNodes(self):
         return self.nodes
@@ -92,8 +92,8 @@ class Path(object):
 
     def addEdge(self,edge):
         self.nodes.append(edge.getDestination())
-        self.outdoorDistance += edge.getOutdoorDistance()
-        self.totalDistance += edge.getTotalDistance()
+        self.outdoorDistance += float(edge.getOutdoorDistance())
+        self.totalDistance += float(edge.getTotalDistance())
 
     def __str__(self):
         return str(self.nodes)
